@@ -57,7 +57,10 @@ class Aggregator(object):
         """
         cids = self.string.concept_id(string)
 
-        return self.definitions_terms_cid(cids)
+        if(len(cids)>0):
+            return self.definitions_terms_cid(cids)
+        else:
+            return {}
 
     def definitions_terms_cid(self, cids, include_synonyms=(), include_term=True):
         """
